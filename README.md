@@ -12,7 +12,7 @@ In practice this means: you finish a debugging session on Monday, context-switch
 
 This app adds the missing labeling layer. Save a session with a human-readable note at any meaningful point. Come back later, see your note, and resume with one click.
 
-![Claude Session Saver]((https://github.com/musaib5/claude-session-saver/issues/1#issue-4152701967))
+![Claude Session Saver](https://github.com/musaib5/claude-session-saver/issues/1#issue-4152701967)
 
 ---
 
