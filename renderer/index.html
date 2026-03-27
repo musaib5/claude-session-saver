@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Session Saver</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Title bar drag region -->
+<div class="titlebar">
+  <span class="titlebar-logo">⬡</span>
+  <span class="titlebar-title">Claude Session Saver</span>
+  <span class="titlebar-sub">Save · Browse · Resume</span>
+  <button id="btn-theme" class="btn-theme" title="Toggle dark mode">
+    <span class="theme-icon">☀️</span>
+    <span class="theme-label">Light</span>
+  </button>
+</div>
+
+<!-- Save panel -->
+<div class="panel">
+  <div class="field-row">
+    <label>Session ID</label>
+    <div class="input-group">
+      <input id="session-id" type="text" class="input mono" placeholder="Auto-detecting…" spellcheck="false">
+      <span id="dot" class="dot amber">●</span>
+      <span id="dot-label" class="dot-label">Detecting…</span>
+      <button id="btn-redetect" class="btn-ghost small" title="Re-detect session">⟳</button>
+    </div>
+  </div>
+
+  <div class="field-row">
+    <label>Comment</label>
+    <div class="input-group">
+      <input id="comment" type="text" class="input" placeholder="What were you working on?" spellcheck="false">
+      <span class="required-tag">required</span>
+    </div>
+  </div>
+
+  <div class="action-row">
+    <button id="btn-save" class="btn-primary">💾&nbsp; Save Session</button>
+    <span id="status-msg" class="status-msg"></span>
+  </div>
+</div>
+
+<div class="divider-gold"></div>
+
+<!-- Sessions table -->
+<div class="table-wrap">
+  <div class="table-header">
+    <div class="col-comment">Comment</div>
+    <div class="col-date">Saved At</div>
+    <div class="col-id">Session ID</div>
+    <div class="col-msgs">Msgs</div>
+    <div class="col-actions">Actions</div>
+  </div>
+  <div id="rows" class="rows"></div>
+</div>
+
+<div class="footer">Saved to <code>~/.claude/saved-sessions.json</code></div>
+
+<script src="renderer.js"></script>
+</body>
+</html>
