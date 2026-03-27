@@ -2,7 +2,15 @@
 
 A lightweight Windows desktop app for saving and resuming [Claude Code](https://claude.ai/code) sessions.
 
-Claude Code sessions expire or get lost when you close your terminal. This app auto-detects your active session, lets you save it with a note, and gives you a one-click resume later.
+---
+
+## The Problem
+
+Claude Code does have a built-in resume feature. You can run `claude --resume <id>` or use `/resume` interactively inside an active session. The problem is that neither gives you a way to *label* sessions or find them later by what you were working on.
+
+In practice this means: you finish a debugging session on Monday, context-switch to something else on Wednesday, and by Friday you have no idea which UUID in `~/.claude/projects/` corresponds to the auth work you want to pick back up. You either dig through JSONL files sorted by timestamp, scroll through the interactive `/resume` picker hoping something looks familiar, or give up and start a fresh session, losing all the context Claude had built up.
+
+This app adds the missing labeling layer. Save a session with a human-readable note at any meaningful point. Come back later, see your note, and resume with one click.
 
 ![Claude Session Saver](https://github.com/user-attachments/assets/placeholder-screenshot)
 
@@ -82,6 +90,15 @@ The app is not code-signed. A trusted code signing certificate costs ~$200-400/y
 
 **Where is my saved sessions data stored?**
 At `~/.claude/saved-sessions.json`. You can open, edit, or delete this file at any time.
+
+---
+
+## Limitations
+
+- Windows only (x64)
+- Token counts are captured at the time you save the session. If you resume and continue working, the saved count will not update
+- Search is label-only. The app searches your notes, not the actual conversation content
+- Not affiliated with Anthropic
 
 ---
 
