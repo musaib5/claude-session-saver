@@ -61,7 +61,7 @@ claude --resume <session-id>
 ## Building from Source
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/claude-session-saver.git
+git clone https://github.com/musaib5/claude-session-saver.git
 cd claude-session-saver
 npm install
 npm start
